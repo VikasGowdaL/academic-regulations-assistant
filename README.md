@@ -1,47 +1,48 @@
 # Academic Regulations Assistant
 
-A Retrieval-Augmented Generation (RAG) chatbot that answers student questions about university regulations, curricula, academic calendars, and examination policies using supplied university documents. Answers include source document and page references.
+A Retrieval-Augmented Generation (RAG) chatbot that answers student questions about university regulations, curricula, academic calendars, and examination policies using supplied university documents. Answers include source-document and page references, and the assistant is instructed to avoid answering when retrieved documents do not provide sufficient information.
 
 ## Features
 
-- PDF document loading with page metadata
-- Fixed-size, recursive, and semantic text chunking
-- Vector search with FAISS or ChromaDB
-- Query planning for multi-part questions
-- Cohere-powered answer generation
-- Session-based conversational context with buffer and summary memory
-- Source document and page references in responses
-- React chat interface backed by a FastAPI API
+- PDF ingestion with page-level metadata using PyPDF.
+- Fixed-size, recursive, and semantic document chunking strategies.
+- Vector indexing and retrieval with FAISS or ChromaDB.
+- Cohere embeddings and chat generation.
+- Query planning for questions with multiple parts.
+- Conversational buffer and summary memory, separated by session ID.
+- FastAPI chat endpoint.
+- React + Vite chat interface with source display.
 
-## Tech Stack
+## Tech stack
 
-**Frontend:** React, Vite, Axios, lucide-react  
-**Backend:** Python, FastAPI, LangChain  
-**LLM and embeddings:** Cohere (`command-a-03-2025`, `embed-english-v3.0`)  
-**Vector stores:** FAISS, ChromaDB  
-**Document processing:** PyPDF
+- **Frontend:** React, Vite, Axios, Lucide React
+- **Backend:** Python, FastAPI, Uvicorn, LangChain
+- **AI:** Cohere Chat API (`command-a-03-2025`) and embeddings (`embed-english-v3.0`)
+- **Vector stores:** FAISS and ChromaDB
 
-## Project Structure
+## Project structure
 
 ```text
 academic-regulations-assistant/
 ├── backend/
-│   ├── documents/          # Add university PDF documents here
-│   ├── indexes/             # Generated vector indexes (not committed)
+│   ├── documents/              # Add your university PDF documents here
+│   ├── indexes/                # Generated vector indexes (not committed)
 │   └── app/
-│       ├── ingestion/       # PDF loading and text splitting
-│       ├── vectorstores/    # FAISS and ChromaDB integration
-│       ├── rag/             # Retrieval, query planning, and answer chain
-│       └── memory/          # Buffer, summary, and conversation memory
+│       ├── ingestion/          # PDF loading and chunking
+│       ├── vectorstores/       # FAISS and ChromaDB creation/loading
+│       ├── rag/                # Query planning, retrieval, prompts and RAG chain
+│       ├── memory/             # Buffer, summary and conversation memory
+│       ├── evaluation/         # Evaluation package (work in progress)
+│       └── main.py             # FastAPI application
 └── frontend/
-    └── src/                 # React application
+    └── src/                    # React chat interface
 ```
 
 ## Prerequisites
 
-- Python 3.10 or newer
-- Node.js and npm
-- A Cohere API key
+- Python 3.10 or newer (use a version compatible with the installed LangChain dependencies).
+- Node.js and npm.
+- A Cohere API key.
 
 ## Setup
 
@@ -58,7 +59,15 @@ cd academic-regulations-assistant
 cd backend
 python3 -m venv venv
 source venv/bin/activate
-pip install fastapi uvicorn python-dotenv langchain langchain-community langchain-cohere langchain-text-splitters langchain-experimental pypdf faiss-cpu chromadb langchain-chroma pandas numpy ragas
+```
+
+Install the backend packages used by the project:
+
+```bash
+pip install fastapi uvicorn python-dotenv pypdf pandas numpy
+pip install langchain langchain-community langchain-cohere
+pip install langchain-text-splitters langchain-experimental
+pip install faiss-cpu chromadb langchain-chroma
 ```
 
 Create a `.env` file inside `backend/`:
@@ -67,17 +76,43 @@ Create a `.env` file inside `backend/`:
 COHERE_API_KEY=your_cohere_api_key
 ```
 
-Do not commit your real `.env` file or expose your API key.
+Keep this key private. The `.env` file is excluded from Git.
 
-### 3. Add university documents and build indexes
+### 3. Add university documents and build an index
 
-Place the PDF documents you are authorized to use in `backend/documents/`. The PDF files and generated vector indexes are excluded from this repository, so each user must provide the documents and generate the indexes locally.
+Place PDF files you are authorized to use in:
 
-Run the project's document-ingestion, chunking, and vector-store creation scripts from the `backend/` directory before starting the API. The application expects the configured FAISS or ChromaDB index to be available.
+```text
+backend/documents/
+```
+
+The PDFs and generated vector indexes are intentionally excluded from this repository. You must provide your own document corpus before running ingestion.
+
+From the `backend/` directory, with the virtual environment active, run one of the following to create an index using recursive chunking:
+
+**FAISS**
+```bash
+python -m app.vectorstores.faiss_store
+```
+
+**ChromaDB**
+```bash
+python -m app.vectorstores.chroma_store
+```
+
+The generated indexes are saved under `backend/indexes/`. The chat API defaults to FAISS; select ChromaDB by sending `"store_type": "chroma"` in the chat request.
+
+To inspect the three available chunking strategies (fixed-size, recursive, and semantic):
+
+```bash
+python -m app.ingestion.split_documents
+```
+
+Semantic splitting uses Cohere embeddings and may make additional API calls.
 
 ### 4. Start the backend
 
-From the `backend/` directory, with the virtual environment activated:
+From the `backend/` directory:
 
 ```bash
 uvicorn app.main:app --reload
@@ -97,9 +132,9 @@ npm run dev
 
 Open the local URL printed by Vite (usually `http://localhost:5173`).
 
-## API
+## Chat API
 
-### `POST /chat`
+**Endpoint:** `POST /chat`
 
 Example request:
 
@@ -107,24 +142,27 @@ Example request:
 {
   "question": "What are the attendance requirements?",
   "store_type": "faiss",
-  "session_id": "your-session-id"
+  "session_id": "student-session-001"
 }
 ```
 
-The response contains the question, session ID, generated answer, and source document/page references.
+The response contains the question, session ID, generated answer, and source list (document name and page number).
 
-Supported vector store values: `faiss` and `chroma`.
+## Implementation notes and limitations
 
-## Notes and Limitations
+- Conversation memory is held in a Python in-memory dictionary. It is separated by session ID but is cleared when the backend process restarts; it is not persistent storage.
+- The FAISS distance threshold in the multi-query retriever is experimental and should be calibrated against a representative evaluation set before production use.
+- The evaluation package is present as a project area, but a completed 50-question evaluation and reported metrics are not included in this version.
+- Update the university name shown in the frontend header to match the institution represented by the PDFs you add.
+- Only upload university documents if you have permission to redistribute them. Keep private documents and API credentials out of public repositories.
 
-- The assistant can only answer reliably from the documents that have been ingested into its vector store. Use current, official documents and rebuild the indexes when the corpus changes.
-- Page references use PDF page numbering generated during ingestion; these may differ from printed page labels in a document.
-- Conversation memory is held in application memory and is not persistent across backend restarts.
-- The retrieval distance threshold is an experimental setting and should be evaluated against a representative question set before production use.
-- Do not upload confidential, copyrighted, or otherwise restricted university documents unless you have permission to share them.
+## Future improvements
 
-## Future Improvements
+- Complete a 50-question evaluation set and report Recall@k, answer correctness, faithfulness, and out-of-scope refusal accuracy.
+- Persist conversation sessions and add session expiry.
+- Calibrate retrieval thresholds separately for each vector store.
+- Add automated tests and deployment configuration.
 
-- Evaluate retrieval using Recall@k and answer quality using correctness and faithfulness metrics.
-- Measure out-of-scope refusal accuracy with a curated evaluation set.
-- Persist conversation sessions and add production deployment configuration.
+## License
+
+No license has been added yet. Add a license before others reuse or distribute this project.

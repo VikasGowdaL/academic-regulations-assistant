@@ -1,0 +1,33 @@
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Generated vector databases
+backend/indexes/
+backend/chroma/
+*.faiss
+*.pkl
+
+# University documents
+backend/documents/*.pdf
+
+# Frontend dependencies
+frontend/node_modules/
+
+# Build files
+frontend/dist/
+
+# IDE and operating system
+.vscode/
+.DS_Store
+
+# Logs
+*.log

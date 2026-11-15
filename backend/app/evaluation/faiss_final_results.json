@@ -1,0 +1,1619 @@
+[
+  {
+    "id": "Q01",
+    "category": "core_rules",
+    "question": "What is IIT Bombay’s attendance expectation and when may an instructor award DX?",
+    "session_id": "eval_attend",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the academic regulations of IIT Bombay (Source: academic_regulations.pdf, Page: 29):\n\n1. **Attendance Expectation**:  \n   IIT Bombay expects students to have 80% attendance or more. If a student meets this threshold, they cannot be awarded a 'Drop due to inadequate attendance' (DX) grade.  \n\n2. **When an Instructor May Award DX**:  \n   An instructor may award a DX grade if a student has less than 80% attendance, except in courses where the instructor has declared in the first week that no DX grade will be awarded.  \n\nThese details are explicitly mentioned in the provided context.",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 0,
+    "faithfulness": 1,
+    "planned_queries": [
+      "What is IIT Bombay's attendance expectation?",
+      "When may an instructor award DX?"
+    ],
+    "planned_query_count": 2,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 6
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 29
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 32
+      }
+    ],
+    "judge_details": {
+      "correctness": 0,
+      "faithfulness": 1,
+      "reasons": [
+        "Correctness: The reference answer states IIT Bombay expects 100% attendance, but the generated answer incorrectly states 80% as the expectation.",
+        "Faithfulness: The generated answer's claims about 80% attendance threshold for DX and the no-DX exception are supported by the retrieved context."
+      ]
+    }
+  },
+  {
+    "id": "Q02",
+    "category": "core_rules",
+    "question": "Can a student with 80% attendance receive a DX grade for inadequate attendance?",
+    "session_id": "eval_Q02",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the academic regulations (academic_regulations.pdf, Page 29), a student with 80% attendance or more cannot be awarded a 'Drop due to inadequate attendance' (DX) grade, except in courses where the instructor has declared in the first week that no DX grade will be awarded. \n\nTherefore, under normal circumstances, a student with 80% attendance cannot receive a DX grade for inadequate attendance. \n\n**Source:** academic_regulations.pdf, Page 29.",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "What is the minimum attendance percentage required to avoid a DX grade for inadequate attendance?",
+      "Are there any exceptions or special circumstances that allow a student with 80% attendance to receive a DX grade for inadequate attendance?"
+    ],
+    "planned_query_count": 2,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 29
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states that a student with 80% attendance cannot receive a DX grade, which aligns with the reference answer.",
+        "The exception mentioned in the generated answer (instructor declaring no DX grade in the first week) is supported by the retrieved context."
+      ]
+    }
+  },
+  {
+    "id": "Q03",
+    "category": "core_rules",
+    "question": "Is there a special medical concession when calculating attendance for DX?",
+    "session_id": "eval_Q03",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the academic regulations (Source: academic_regulations.pdf, Page: 29), there is **no specific concession** given for lack of attendance on medical grounds when calculating attendance for the purpose of awarding a 'Drop due to inadequate attendance' (DX) grade.",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 0,
+    "faithfulness": 0,
+    "planned_queries": [
+      "What is the attendance calculation policy for DX?",
+      "Is there a medical concession for attendance in DX?"
+    ],
+    "planned_query_count": 2,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 29
+      }
+    ],
+    "judge_details": {
+      "correctness": 0,
+      "faithfulness": 0,
+      "reasons": [
+        "The reference answer states there is no specific concession, but the retrieved context contradicts this by mentioning a concession for medical grounds. The generated answer incorrectly aligns with the reference answer.",
+        "The generated answer claims no concession is given, which is not supported by the retrieved context, which explicitly states a concession is to be given for medical grounds."
+      ]
+    }
+  },
+  {
+    "id": "Q04",
+    "category": "core_rules",
+    "question": "What are the maximum registration credits for academic Categories I, II–IV, V and VI?",
+    "session_id": "eval_credits",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the academic regulations (Source: academic_regulations.pdf, Page: 22), the maximum registration credits for each academic category are as follows:\n\n- **Category I**: 54 credits  \n- **Category II, III, IV**: 48 credits  \n- **Category V**: 36 credits  \n- **Category VI (ASP)**: 24 credits  \n\n(Ref: 261st Senate meeting for Category V, academic_regulations.pdf, Page: 22)",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "What are the maximum registration credits for academic Category I?",
+      "What are the maximum registration credits for academic Categories II–IV?",
+      "What are the maximum registration credits for academic Category V?",
+      "What are the maximum registration credits for academic Category VI?"
+    ],
+    "planned_query_count": 4,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 21
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 22
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "All essential facts from the reference answer are correctly stated in the generated answer.",
+        "Every claim in the generated answer is supported by the retrieved context."
+      ]
+    }
+  },
+  {
+    "id": "Q05",
+    "category": "core_rules",
+    "question": "What is the usual minimum number of credits per semester, and what exception is allowed?",
+    "session_id": "eval_Q05",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the academic regulations (academic_regulations.pdf, Page 22), the usual minimum number of credits per semester is 18 credits. \n\nAn exception is allowed if a student has completed most of the minimum credit requirements. In such cases, the student may register for the remaining courses, which may be less than 18 credits (academic_regulations.pdf, Page 22). \n\n**Sources:**\n- academic_regulations.pdf, Page 22",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "What is the usual minimum number of credits per semester?",
+      "What exception is allowed for the minimum number of credits per semester?"
+    ],
+    "planned_query_count": 2,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 17
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 22
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states the usual minimum number of credits per semester as 18, matching the reference answer.",
+        "The exception for students who have completed most minimum requirements is accurately described, aligning with both the reference answer and retrieved context.",
+        "All claims in the generated answer are supported by the retrieved context from academic_regulations.pdf, Page 22."
+      ]
+    }
+  },
+  {
+    "id": "Q06",
+    "category": "core_rules",
+    "question": "Who approves registration, and can the maximum permitted credit load be exceeded?",
+    "session_id": "eval_Q06",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "**Who approves registration?**  \nRegistration is approved by the student's Faculty Advisor. (Source: *academic_regulations.pdf*, Page 15)  \n\n**Can the maximum permitted credit load be exceeded?**  \nNo, the maximum credits allowed cannot be exceeded under any circumstances. (Source: *academic_regulations.pdf*, Page 22)",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "Who approves registration?",
+      "Can the maximum permitted credit load be exceeded?"
+    ],
+    "planned_query_count": 2,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 15
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 22
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states that the Faculty Advisor approves registration and that the maximum permitted credit load cannot be exceeded, aligning with the reference answer and retrieved context."
+      ]
+    }
+  },
+  {
+    "id": "Q07",
+    "category": "core_rules",
+    "question": "What happens if a student does not register for a semester without prior UGAPEC permission?",
+    "session_id": "eval_registration",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the academic regulations (Source: academic_regulations.pdf, Page: 15), if a student does not register for a semester without prior permission of the UGAPEC, her/his studentship is liable to be cancelled.\n\nAdditionally, the regulations (Source: academic_regulations.pdf, Page: 18) state that not registering for any semester before the last date for registration without prior approval of the UGAPEC may result in the UGAPEC recommending dropping that semester.",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "What are the consequences for a student who does not register for a semester without prior UGAPEC permission?",
+      "Consequences for unregistered students without UGAPEC approval.",
+      "UGAPEC policies on semester registration and exceptions."
+    ],
+    "planned_query_count": 3,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 15
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 18
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states that studentship is liable to be cancelled if a student does not register without prior UGAPEC permission (Page 15).",
+        "The additional claim about UGAPEC recommending dropping the semester is supported by the retrieved context (Page 18)."
+      ]
+    }
+  },
+  {
+    "id": "Q08",
+    "category": "core_rules",
+    "question": "Can a student re-register for a course already passed?",
+    "session_id": "eval_Q08",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the academic regulations (Source: academic_regulations.pdf, Page: 15), students are **not permitted to re-register for courses which they have already passed**.",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "Can a student re-register for a course already passed?"
+    ],
+    "planned_query_count": 1,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 15
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 40
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states that students cannot re-register for courses already passed, aligning with the reference answer.",
+        "The claim is directly supported by the retrieved context from academic_regulations.pdf, Page 15, clause h)."
+      ]
+    }
+  },
+  {
+    "id": "Q09",
+    "category": "core_rules",
+    "question": "What is the passing grade range for regular courses and which grades indicate failure?",
+    "session_id": "eval_grades",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the academic regulations (Source: academic_regulations.pdf, Page: 29), a student passes a regular course if they receive any grade in the range of **“AP” to “DD”**. \n\nThe grades that indicate failure are **“FR” and/or “DX”**.",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "What is the passing grade range for regular courses?",
+      "Which grades indicate failure in regular courses?"
+    ],
+    "planned_query_count": 2,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 29
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 30
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states the passing grade range (AP to DD) and failure grades (FR and DX), matching the reference answer and retrieved context.",
+        "All claims in the generated answer are directly supported by the retrieved context from academic_regulations.pdf, Page 29."
+      ]
+    }
+  },
+  {
+    "id": "Q10",
+    "category": "core_rules",
+    "question": "Does a DX grade count towards CPI, and what is the repeat requirement?",
+    "session_id": "eval_Q10",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the academic regulations (academic_regulations.pdf, Page 29), a 'Drop due to inadequate attendance' (DX) grade is treated as equivalent to a 'Course Drop' carried out on initiation by the student for the purpose of CPI calculation. This implies that a DX grade does count towards CPI in the same way a course drop would.\n\nRegarding the repeat requirement, I could not find sufficient information about this in the available university documents. The provided context does not specify the repeat requirements for a course with a DX grade.\n\n**Sources:**\n- academic_regulations.pdf, Page 29 (for CPI calculation)\n- No source found for repeat requirements.",
+    "refused": true,
+    "refusal_decision_correct": false,
+    "retrieval_recall_at_k_page_level": 0.0,
+    "correctness": 0,
+    "faithfulness": null,
+    "planned_queries": [
+      "Does a DX grade count towards CPI?",
+      "What is the repeat requirement for a DX grade?"
+    ],
+    "planned_query_count": 2,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 21
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 25
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 29
+      }
+    ],
+    "judge_details": null
+  },
+  {
+    "id": "Q11",
+    "category": "core_rules",
+    "question": "How is the SPI calculated, and how are FR grades treated?",
+    "session_id": "eval_spi",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "The SPI (Semester Performance Index) is calculated as the weighted average of the grade points obtained in all the courses registered by the student during the semester, rounded to two decimal places (academic_regulations.pdf, Page 30). \n\nWhen a student receives an \"FR\" grade in a course, it indicates that their performance is below an acceptable threshold, as determined by the instructor or panel of examiners, or due to academic malpractices (academic_regulations.pdf, Page 29). In the SPI calculation, the course with the \"FR\" grade is treated as having a grade point of zero (academic_regulations.pdf, Page 31). \n\nFor example, if a student has failed in course 4 (received an \"FR\" grade), the SPI calculation would be:\n\nSPI = (C1*g1 + C2*g2 + C3*g3 + C4*0 + C5*g5) / (C1 + C2 + C3 + C4 + C5)\n\nWhere:\n- C1 to C5 represent the credits of each course\n- g1 to g5 represent the grade points of each course (academic_regulations.pdf, Page 31)\n\nNote that courses which do not form the minimum requirement of the degree will not be considered in the SPI calculation (academic_regulations.pdf, Page 31). \n\nAdditionally, an instructor may declare an \"FR\" grade even if a student is absent from the end-semester examination on valid grounds, if their in-semester performance is considered unsatisfactory (academic_regulations.pdf, Page 32).",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "How is the SPI calculated?",
+      "How are FR grades treated?"
+    ],
+    "planned_query_count": 2,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 29
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 30
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 31
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 32
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states that SPI is the credit-weighted average of grade points and that FR grades contribute zero grade points in the SPI calculation.",
+        "All claims in the generated answer are supported by the retrieved context, including the definition of SPI, the treatment of FR grades, and the conditions under which an FR grade is awarded."
+      ]
+    }
+  },
+  {
+    "id": "Q12",
+    "category": "core_rules",
+    "question": "How many credits are required for a minor?",
+    "session_id": "eval_minor",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the academic regulations (Source: academic_regulations.pdf, Page: 13), **30 credits** are required for a minor. If these credits are not completed, the minor will not be awarded, although the individual course credits earned will still be reflected in the transcript.",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "How many credits are required for a minor?"
+    ],
+    "planned_query_count": 1,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 13
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states the required 30 credits for a minor, matching the reference answer.",
+        "The claim about 30 credits and the consequence of not completing them is directly supported by the retrieved context."
+      ]
+    }
+  },
+  {
+    "id": "Q13",
+    "category": "core_rules",
+    "question": "What is the required minimum enrollment for a department or institute elective?",
+    "session_id": "eval_Q13",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the academic regulations (academic_regulations.pdf, Page 20), the required minimum enrollment for a department or institute elective course is 5 students. If less than 5 students are registered, the concerned DU GC/Head of Academic Units may decide to run the course.\n\n**Source:** academic_regulations.pdf, Page 20.",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "What is the required minimum enrollment for a department elective?",
+      "What is the required minimum enrollment for an institute elective?"
+    ],
+    "planned_query_count": 2,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 16
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 20
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 24
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states the minimum enrollment requirement of 5 students for department/institute electives and the provision for running the course with fewer students, as per the retrieved context.",
+        "The claim about the minor course being offered even with one student is also supported by the retrieved context."
+      ]
+    }
+  },
+  {
+    "id": "Q14",
+    "category": "core_rules",
+    "question": "What is the grade and credit status of GC 101?",
+    "session_id": "eval_gc",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the provided documents:\n\n1. **Grade Status of GC 101**:  \n   An NP grade in GC 101 shall not be a bar for applying for a branch change. (Source: academic_regulations.pdf, Page: 34, Point d)  \n\n2. **Credit Status of GC 101**:  \n   GC 101 is a 0-credit course. (Source: curriculum.pdf, Page: 8)  \n\nThus, the grade and credit status of GC 101 are as follows:  \n- **Grade**: NP grade does not affect branch change eligibility.  \n- **Credits**: 0 credits.",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 0.0,
+    "correctness": 0,
+    "faithfulness": 1,
+    "planned_queries": [
+      "What is the grade status of GC 101?",
+      "What is the credit status of GC 101?"
+    ],
+    "planned_query_count": 2,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 34
+      },
+      {
+        "source": "curriculum.pdf",
+        "page": 8
+      }
+    ],
+    "judge_details": {
+      "correctness": 0,
+      "faithfulness": 1,
+      "reasons": [
+        "Correctness: The generated answer does not mention that GC 101 is compulsory and that PP is required for degree award, which are essential facts from the reference answer.",
+        "Faithfulness: All claims in the generated answer are supported by the retrieved context."
+      ]
+    }
+  },
+  {
+    "id": "Q15",
+    "category": "core_rules",
+    "question": "What does an FF grade mean and what is the re-examination policy?",
+    "session_id": "eval_Q15",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the **academic_regulations.pdf** (Page 30), an \"FF\" grade is awarded to UG students by the concerned course instructor. This grade indicates that the student has failed the course but is given one chance for re-examination. If the student does not pass the re-examination, the \"FF\" grade will be converted to \"FR\".\n\n**Re-examination policy for FF grade:**\n\n1. The re-examination will be conducted for 50% weightage (or the same weightage as the end-semester exam for the course) (**academic_regulations.pdf**, Page 30).\n2. The re-examination for students with an \"FF\" grade will be conducted along with the medical re-exam (**academic_regulations.pdf**, Page 30).\n3. For 1st-year UG students, no direct \"FR\" grade will be awarded after the end-semester in the 1st attempt. Instead, the fail grade will be \"FF\" at the first instance of the examination. The student must reappear in the examination of the course in which they have obtained an \"FF\" grade. Subsequently, a letter grade \"DD\" or \"FR\" will be allotted (**academic_regulations.pdf**, Page 30).\n\nNote: The information provided is specific to the context of the retrieved university documents and may not apply to other institutions.",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "What does an FF grade mean?",
+      "What is the re-examination policy?"
+    ],
+    "planned_query_count": 2,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 25
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 30
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states all essential facts from the reference answer, including the FF grade meaning, re-examination opportunity, and conversion to FR if not passed.",
+        "Every claim in the generated answer is supported by the retrieved context, including the re-examination weightage, timing, and specific rules for 1st-year UG students."
+      ]
+    }
+  },
+  {
+    "id": "Q16",
+    "category": "calendar_curriculum",
+    "question": "When do autumn semester lectures begin in 2026?",
+    "session_id": "eval_Q16",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the academic calendar for IIT Bombay (academic_calendar.pdf, page 3), the autumn semester lectures for 2026 begin on **27 July 2026 (Monday)**.",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "When do autumn semester lectures begin in 2026?"
+    ],
+    "planned_query_count": 1,
+    "retrieved_sources": [
+      {
+        "source": "academic_calendar.pdf",
+        "page": 3
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states the start date of autumn semester lectures as 27 July 2026, matching the reference answer.",
+        "The claim is directly supported by the retrieved context from academic_calendar.pdf, page 3."
+      ]
+    }
+  },
+  {
+    "id": "Q17",
+    "category": "calendar_curriculum",
+    "question": "When do autumn semester lectures end in 2026?",
+    "session_id": "eval_Q17",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the academic calendar for IIT Bombay (academic_calendar.pdf, page 3), the autumn semester lectures for 2026 end on **6 November 2026 (Friday)**.",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "When do autumn semester lectures end in 2026?"
+    ],
+    "planned_query_count": 1,
+    "retrieved_sources": [
+      {
+        "source": "academic_calendar.pdf",
+        "page": 3
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states the end date of autumn semester lectures as 6 November 2026, matching the reference answer.",
+        "The claim is directly supported by the retrieved context from academic_calendar.pdf, page 3, which specifies the end date as 6 Nov 2026 (Friday)."
+      ]
+    }
+  },
+  {
+    "id": "Q18",
+    "category": "calendar_curriculum",
+    "question": "When is the last date for late autumn semester registration with a fine?",
+    "session_id": "eval_Q18",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "I could not find sufficient information about the last date for late autumn semester registration with a fine in the available university documents. The academic calendar (academic_calendar.pdf, Page 8) mentions the start date of registration for Autumn Semester 2027-28 but does not specify the last date for late registration with a fine. The academic regulations (academic_regulations.pdf, Page 15) state that late registration may be permitted till the date specified in the Academic Calendar, on payment of a late registration fee, but the exact date is not provided in the retrieved context.",
+    "refused": true,
+    "refusal_decision_correct": false,
+    "retrieval_recall_at_k_page_level": 0.0,
+    "correctness": 0,
+    "faithfulness": null,
+    "planned_queries": [
+      "What is the deadline for late autumn semester registration with a fine?"
+    ],
+    "planned_query_count": 1,
+    "retrieved_sources": [
+      {
+        "source": "academic_calendar.pdf",
+        "page": 8
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 15
+      }
+    ],
+    "judge_details": null
+  },
+  {
+    "id": "Q19",
+    "category": "calendar_curriculum",
+    "question": "When is the last date for autumn semester course adjustment?",
+    "session_id": "eval_Q19",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "The last date for autumn semester course adjustment is **3 August 2026 (Monday)** (Source: *academic_calendar.pdf*, Page: 3).",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "When is the last date for autumn semester course adjustment?"
+    ],
+    "planned_query_count": 1,
+    "retrieved_sources": [
+      {
+        "source": "academic_calendar.pdf",
+        "page": 3
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states the last date for autumn semester course adjustment as 3 August 2026, matching the reference answer.",
+        "The claim in the generated answer is directly supported by the retrieved context from *academic_calendar.pdf*, Page 3."
+      ]
+    }
+  },
+  {
+    "id": "Q20",
+    "category": "calendar_curriculum",
+    "question": "When does the autumn 2026 mid-semester examination period begin?",
+    "session_id": "eval_Q20",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "I could not find sufficient information about the start date of the autumn 2026 mid-semester examination period in the available university documents. The provided context (academic_calendar.pdf, pages 3 and 4) mentions the issuance of the mid-semester examination timetable by the Academic Office on 31 Aug 2026 (Monday) but does not specify the start date of the examination period itself.",
+    "refused": true,
+    "refusal_decision_correct": false,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 0,
+    "faithfulness": null,
+    "planned_queries": [
+      "When does the autumn 2026 mid-semester examination period begin?"
+    ],
+    "planned_query_count": 1,
+    "retrieved_sources": [
+      {
+        "source": "academic_calendar.pdf",
+        "page": 3
+      },
+      {
+        "source": "academic_calendar.pdf",
+        "page": 4
+      }
+    ],
+    "judge_details": null
+  },
+  {
+    "id": "Q21",
+    "category": "calendar_curriculum",
+    "question": "When do autumn 2026 end-semester examinations begin?",
+    "session_id": "eval_Q21",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "I could not find sufficient information about the start date of autumn 2026 end-semester examinations in the available university documents. The provided context (academic_calendar.pdf, pages 3 and 5) mentions the start and end dates of the Autumn Semester lectures (27 July 2026 - 6 Nov 2026) and the last date for end of academic activities for the Autumn Semester (9 Dec 2026), but it does not specify the examination dates. \n\n**Source:** academic_calendar.pdf, pages 3 and 5.",
+    "refused": true,
+    "refusal_decision_correct": false,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 0,
+    "faithfulness": null,
+    "planned_queries": [
+      "When do autumn 2026 end-semester examinations begin?"
+    ],
+    "planned_query_count": 1,
+    "retrieved_sources": [
+      {
+        "source": "academic_calendar.pdf",
+        "page": 3
+      },
+      {
+        "source": "academic_calendar.pdf",
+        "page": 5
+      }
+    ],
+    "judge_details": null
+  },
+  {
+    "id": "Q22",
+    "category": "calendar_curriculum",
+    "question": "When do spring semester lectures begin in January 2027?",
+    "session_id": "eval_Q22",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the academic calendar (Source: academic_calendar.pdf, Page: 6), the spring semester lectures begin on **4 Jan 2027 (Monday)**.",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "When do spring semester lectures begin in January 2027?"
+    ],
+    "planned_query_count": 1,
+    "retrieved_sources": [
+      {
+        "source": "academic_calendar.pdf",
+        "page": 6
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states the start date of spring semester lectures as 4 January 2027, matching the reference answer.",
+        "The claim is directly supported by the retrieved context from academic_calendar.pdf, Page 6, which lists the start date as 4 Jan 2027 (Monday)."
+      ]
+    }
+  },
+  {
+    "id": "Q23",
+    "category": "calendar_curriculum",
+    "question": "When does the summer vacation begin in 2027?",
+    "session_id": "eval_Q23",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "I could not find sufficient information about the start date of the summer vacation in 2027 in the available university documents. The academic calendar (academic_calendar.pdf, Page 9) provides details about the summer term schedule, including the last date of academic activities on 21 July 2027 (Wednesday), but it does not explicitly mention the start date of the summer vacation.",
+    "refused": true,
+    "refusal_decision_correct": false,
+    "retrieval_recall_at_k_page_level": 0.0,
+    "correctness": 0,
+    "faithfulness": null,
+    "planned_queries": [
+      "When does the summer vacation begin in 2027?"
+    ],
+    "planned_query_count": 1,
+    "retrieved_sources": [
+      {
+        "source": "academic_calendar.pdf",
+        "page": 9
+      }
+    ],
+    "judge_details": null
+  },
+  {
+    "id": "Q24",
+    "category": "calendar_curriculum",
+    "question": "How many credits does MA 105 Calculus carry in the Aerospace Engineering first-semester curriculum?",
+    "session_id": "eval_Q24",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the curriculum.pdf (Page: 1 and Page: 8), the course MA 105 Calculus carries **8 credits** in the Aerospace Engineering first-semester curriculum.",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "What is the credit value of MA 105 Calculus?",
+      "Is MA 105 Calculus part of the Aerospace Engineering first-semester curriculum?"
+    ],
+    "planned_query_count": 2,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 35
+      },
+      {
+        "source": "curriculum.pdf",
+        "page": 1
+      },
+      {
+        "source": "curriculum.pdf",
+        "page": 8
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states that MA 105 Calculus carries 8 credits, which matches the reference answer.",
+        "The claim is supported by the retrieved context from curriculum.pdf (Page: 1 and Page: 8) and academic_regulations.pdf (Page: 35)."
+      ]
+    }
+  },
+  {
+    "id": "Q25",
+    "category": "calendar_curriculum",
+    "question": "How many credits does CH 117 Chemistry lab carry in the Aerospace Engineering first semester?",
+    "session_id": "eval_Q25",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the curriculum.pdf (Page: 1 and Page: 5), the course CH 117 Chemistry lab carries **3 credits** in the Aerospace Engineering first semester.",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "What is the credit value of CH 117 Chemistry lab?",
+      "In which semester is CH 117 Chemistry lab offered in the Aerospace Engineering program?"
+    ],
+    "planned_query_count": 2,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 35
+      },
+      {
+        "source": "curriculum.pdf",
+        "page": 1
+      },
+      {
+        "source": "curriculum.pdf",
+        "page": 5
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states that CH 117 Chemistry lab carries 3 credits, which matches the reference answer.",
+        "The claim is supported by the retrieved context from academic_regulations.pdf (Page: 35) and curriculum.pdf (Page: 1 and Page: 5)."
+      ]
+    }
+  },
+  {
+    "id": "Q26",
+    "category": "multi_part",
+    "question": "What is the DX attendance threshold, and what is the maximum credit load for Category I?",
+    "session_id": "eval_Q26",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the provided university documents:\n\n1. **DX Attendance Threshold**:  \n   The DX grade (Drop due to inadequate attendance) is awarded if a student has less than 80% of the total attendance expected in a course. (Source: *academic_regulations.pdf*, Page 29)  \n\n2. **Maximum Credit Load for Category I**:  \n   Students in Category I are allowed a maximum credit load of 54 credits. (Source: *academic_regulations.pdf*, Page 22)",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "What is the DX attendance threshold?",
+      "What is the maximum credit load for Category I?"
+    ],
+    "planned_query_count": 2,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 22
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 29
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states the DX attendance threshold as less than 80%, which aligns with the retrieved context.",
+        "The maximum credit load for Category I is accurately stated as 54 credits, supported by the retrieved context.",
+        "All claims in the generated answer are directly supported by the provided context."
+      ]
+    }
+  },
+  {
+    "id": "Q27",
+    "category": "multi_part",
+    "question": "What is the minimum registration load, and who must approve registration?",
+    "session_id": "eval_Q27",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "The provided university documents do not specify a minimum registration load (academic_regulations.pdf, Pages 15, 22). However, they do outline the maximum credit limits based on academic standing, such as 54 credits for Category I students (academic_regulations.pdf, Page 22).\n\nRegarding approval of registration, all students’ registration must be approved by their Faculty Advisor (academic_regulations.pdf, Page 15). Additionally, some courses may require instructor consent (academic_regulations.pdf, Page 15).\n\n**Summary of Answers:**\n- Minimum registration load: I could not find sufficient information about this in the available university documents.\n- Approval of registration: Faculty Advisor (academic_regulations.pdf, Page 15), and instructor consent may be required for certain courses (academic_regulations.pdf, Page 15).",
+    "refused": true,
+    "refusal_decision_correct": false,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 0,
+    "faithfulness": null,
+    "planned_queries": [
+      "What is the minimum registration load?",
+      "Who must approve registration?"
+    ],
+    "planned_query_count": 2,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 15
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 22
+      }
+    ],
+    "judge_details": null
+  },
+  {
+    "id": "Q28",
+    "category": "multi_part",
+    "question": "Is semester registration mandatory, and what happens if a student does not register without permission?",
+    "session_id": "eval_Q28",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "Yes, semester registration is mandatory for every student until they complete their program. This is stated in the academic regulations (Source: academic_regulations.pdf, Page: 15). \n\nIf a student does not register in a particular semester without prior permission of the UGAPEC, their studentship is liable to be cancelled. This consequence is also clearly outlined in the same document (Source: academic_regulations.pdf, Page: 15).",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "Is semester registration mandatory?",
+      "What happens if a student does not register without permission?"
+    ],
+    "planned_query_count": 2,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 15
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 16
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states that semester registration is mandatory and that failure to register without UGAPEC permission can lead to cancellation of studentship, aligning with the reference answer.",
+        "All claims in the generated answer are supported by the retrieved context from academic_regulations.pdf, Page 15."
+      ]
+    }
+  },
+  {
+    "id": "Q29",
+    "category": "multi_part",
+    "question": "What is the difference between FR and DX, and how does DX affect CPI?",
+    "session_id": "eval_Q29",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "**What is the difference between FR and DX?**  \nI could not find sufficient information about the difference between FR and DX in the available university documents.  \n\n**How does DX affect CPI?**  \nAccording to the *academic_regulations.pdf* (Page 29), a ‘Drop due to inadequate attendance’ (DX) grade is treated as equivalent to a ‘Course Drop’ initiated by the student for the purpose of CPI calculation.  \n\n**Source:**  \n- *academic_regulations.pdf*, Page 29.",
+    "refused": true,
+    "refusal_decision_correct": false,
+    "retrieval_recall_at_k_page_level": 0.5,
+    "correctness": 0,
+    "faithfulness": null,
+    "planned_queries": [
+      "What is the difference between FR and DX?",
+      "How does DX affect CPI?"
+    ],
+    "planned_query_count": 2,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 21
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 29
+      }
+    ],
+    "judge_details": null
+  },
+  {
+    "id": "Q30",
+    "category": "multi_part",
+    "question": "How many credits are needed for a minor, and how many masters-level course credits are needed for the dual-degree programme?",
+    "session_id": "eval_Q30",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the provided university documents:\n\n1. **Credits needed for a Minor**:  \n   A total of **30 credits** are required for the award of a Minor. If these credits are not completed, the Minor will not be awarded, although the individual course credits will be reflected in the transcript.  \n   *Source: academic_regulations.pdf, Page 13*\n\n2. **Masters-level course credits for the Dual Degree Programme**:  \n   The documents mention that the \"B.Tech. + M.Tech. Dual Degree programme\" requires **B.Tech Honours credits**, with a minimum of **24 credits**. These credits can comprise either only courses or a combination of courses and a project. However, the documents do not explicitly specify how many of these credits must be at the masters level.  \n   *Source: academic_regulations.pdf, Page 12*\n\nI could not find sufficient information about the specific number of masters-level course credits required for the dual-degree programme in the available university documents.",
+    "refused": true,
+    "refusal_decision_correct": false,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 0,
+    "faithfulness": null,
+    "planned_queries": [
+      "How many credits are needed for a minor?",
+      "How many masters-level course credits are needed for the dual-degree programme?"
+    ],
+    "planned_query_count": 2,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 11
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 12
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 13
+      }
+    ],
+    "judge_details": null
+  },
+  {
+    "id": "Q31",
+    "category": "multi_part",
+    "question": "What is the maximum load for Category V and Category VI students, and can the Faculty Advisor prescribe less?",
+    "session_id": "eval_Q31",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the **academic_regulations.pdf** (Page 22), the maximum credit load for:\n\n- **Category V students** is **36 credits** (Ref: 261st Senate meeting).  \n- **Category VI (ASP) students** is **24 credits**.  \n\nRegarding whether the Faculty Advisor can prescribe less, the document states:  \n*\"The Faculty Advisor is the competent authority to approve course registration in all cases.\"* (Page 22)  \nThis implies that the Faculty Advisor has the authority to approve a lower credit load if deemed appropriate.  \n\n**Source:**  \n- academic_regulations.pdf, Page 22.",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "What is the maximum load for Category V students?",
+      "What is the maximum load for Category VI students?",
+      "Can the Faculty Advisor prescribe a lower load than the maximum for Category V and Category VI students?"
+    ],
+    "planned_query_count": 3,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 17
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 21
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 22
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states the maximum credit loads for Category V (36) and Category VI (ASP) (24) students, matching the reference answer.",
+        "The claim that Faculty Advisors may prescribe lower loads is supported by the retrieved context, which states that the Faculty Advisor is the competent authority to approve course registration in all cases."
+      ]
+    }
+  },
+  {
+    "id": "Q32",
+    "category": "multi_part",
+    "question": "What happens if attendance is below 80%, and is medical absence automatically exempt?",
+    "session_id": "eval_Q32",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the academic regulations (academic_regulations.pdf, Page 29), if a student's attendance is below 80% of the total expected attendance, the instructor may award the student a 'Drop due to inadequate attendance' or 'DX' grade in that course. This grade is treated as equivalent to a 'Course Drop' initiated by the student for CPI calculation purposes.\n\nRegarding medical absence, the regulations explicitly state that **no specific concession is to be given for lack of attendance on medical grounds** (academic_regulations.pdf, Page 29). Therefore, medical absence is not automatically exempt from the attendance requirement.\n\nIn summary:\n1. Attendance below 80% may result in a 'DX' grade (academic_regulations.pdf, Page 29).\n2. Medical absence does not automatically exempt a student from the attendance requirement (academic_regulations.pdf, Page 29).",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "What happens if attendance is below 80%?",
+      "Is medical absence automatically exempt from attendance requirements?"
+    ],
+    "planned_query_count": 2,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 19
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 25
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 29
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states that attendance below 80% may result in a 'DX' grade, as supported by the retrieved context (academic_regulations.pdf, Page 29).",
+        "The generated answer accurately reflects that no specific medical concession is provided for attendance, as explicitly stated in the retrieved context (academic_regulations.pdf, Page 29).",
+        "All claims in the generated answer are directly supported by the retrieved context, ensuring faithfulness."
+      ]
+    }
+  },
+  {
+    "id": "Q33",
+    "category": "multi_part",
+    "question": "Can students register for already-passed courses, and who approves their semester registration?",
+    "session_id": "eval_Q33",
+    "is_follow_up": false,
+    "out_of_scope": false,
+    "answer": "According to the academic regulations (academic_regulations.pdf, Page 15), students are **not permitted to re-register for courses they have already passed** (Section h).  \n\nRegarding approval of semester registration, the regulations state that **all students' registration must be approved by their Faculty Advisor** (academic_regulations.pdf, Page 15). Additionally, **some courses may require instructor consent** (academic_regulations.pdf, Page 15).",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "Can students register for already-passed courses?",
+      "Who approves their semester registration?"
+    ],
+    "planned_query_count": 2,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 15
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states that students cannot re-register for already-passed courses and that the Faculty Advisor approves registration, aligning with the reference answer.",
+        "All claims in the generated answer are directly supported by the retrieved context from academic_regulations.pdf, Page 15."
+      ]
+    }
+  },
+  {
+    "id": "Q34",
+    "category": "follow_up",
+    "question": "What if my attendance is exactly 80%?",
+    "session_id": "eval_attend",
+    "is_follow_up": true,
+    "out_of_scope": false,
+    "answer": "According to the academic regulations of IIT Bombay (Source: academic_regulations.pdf, Page: 29):\n\nIf your attendance is exactly 80%, you **cannot** be awarded a 'Drop due to inadequate attendance' (DX) grade. The regulations state that a student with 80% attendance or more is not eligible for a DX grade, unless the instructor has declared in the first week that no DX grade will be awarded in that course.\n\n**Source:** academic_regulations.pdf, **Page:** 29",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "What is the attendance threshold for avoiding a DX grade at IIT Bombay?",
+      "What happens if a student's attendance is exactly at the threshold for avoiding a DX grade?"
+    ],
+    "planned_query_count": 2,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 21
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 29
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 32
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states that a student with exactly 80% attendance cannot be awarded a DX grade, which aligns with the reference answer and the retrieved context.",
+        "The claim that a student with 80% attendance or more is not eligible for a DX grade is supported by the retrieved context (Source: academic_regulations.pdf, Page: 29)."
+      ]
+    }
+  },
+  {
+    "id": "Q35",
+    "category": "follow_up",
+    "question": "What about Category V?",
+    "session_id": "eval_credits",
+    "is_follow_up": true,
+    "out_of_scope": false,
+    "answer": "According to the academic regulations (Source: academic_regulations.pdf, Page: 22), the maximum registration credits for **Category V** is **36 credits**.  \n\n(Ref: 261st Senate meeting, academic_regulations.pdf, Page: 22)",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "Maximum registration credits for academic Category V."
+    ],
+    "planned_query_count": 1,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 22
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states the maximum registration credits for Category V as 36 credits, matching the reference answer and retrieved context.",
+        "The claim in the generated answer is directly supported by the retrieved context from academic_regulations.pdf, Page: 22."
+      ]
+    }
+  },
+  {
+    "id": "Q36",
+    "category": "follow_up",
+    "question": "Who can approve it?",
+    "session_id": "eval_registration",
+    "is_follow_up": true,
+    "out_of_scope": false,
+    "answer": "Based on the provided university document context, the approval for course registration must come from the student's **Faculty Advisor** (Source: academic_regulations.pdf, Page: 15). Additionally, some courses may also require **instructor consent** (Source: academic_regulations.pdf, Page: 15).",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "Who is authorized to grant permission for a student to not register for a semester?"
+    ],
+    "planned_query_count": 1,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 15
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 18
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states that the Faculty Advisor approves course registration, which aligns with the reference answer and the retrieved context (Source: academic_regulations.pdf, Page: 15).",
+        "The mention of instructor consent for some courses is also supported by the retrieved context (Source: academic_regulations.pdf, Page: 15)."
+      ]
+    }
+  },
+  {
+    "id": "Q37",
+    "category": "follow_up",
+    "question": "Does DX count as a passing grade?",
+    "session_id": "eval_grades",
+    "is_follow_up": true,
+    "out_of_scope": false,
+    "answer": "According to the academic regulations (Source: academic_regulations.pdf, Page: 29), the grade **“DX”** is awarded to students who have inadequate attendance, falling below eighty percent of the total attendance expected.  \n\nBased on the previous conversation, **“DX”** is explicitly mentioned as a grade that indicates failure (Source: academic_regulations.pdf, Page: 29).  \n\nTherefore, **“DX” does not count as a passing grade**.",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "Does DX count as a passing grade?"
+    ],
+    "planned_query_count": 1,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 29
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states that DX is not a passing grade, aligning with the reference answer.",
+        "The claim that DX indicates failure is supported by the retrieved context, which specifies that DX is awarded for inadequate attendance and is not a passing grade."
+      ]
+    }
+  },
+  {
+    "id": "Q38",
+    "category": "follow_up",
+    "question": "How is an FR treated in that calculation?",
+    "session_id": "eval_spi",
+    "is_follow_up": true,
+    "out_of_scope": false,
+    "answer": "In the SPI calculation, an \"FR\" grade is treated as having a grade point of **zero** (academic_regulations.pdf, Page 31). This means that if a student receives an \"FR\" in a course, the grade points for that course are considered as **0** in the weighted average calculation.",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 1,
+    "faithfulness": 1,
+    "planned_queries": [
+      "How is an FR grade treated in the SPI calculation?"
+    ],
+    "planned_query_count": 1,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 30
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 31
+      }
+    ],
+    "judge_details": {
+      "correctness": 1,
+      "faithfulness": 1,
+      "reasons": [
+        "The generated answer correctly states that an FR grade contributes zero grade points to the SPI calculation, aligning with the reference answer.",
+        "The claim is directly supported by the retrieved context from academic_regulations.pdf, Page 31, which explicitly states that an FR grade is treated as zero in the SPI calculation."
+      ]
+    }
+  },
+  {
+    "id": "Q39",
+    "category": "follow_up",
+    "question": "Is that in the same discipline as my major?",
+    "session_id": "eval_minor",
+    "is_follow_up": true,
+    "out_of_scope": false,
+    "answer": "According to the academic regulations (Source: academic_regulations.pdf, Page: 13), the document does not explicitly state whether a minor must be in the same discipline as the student's major. It only mentions that the Institute offers Minors in their disciplines and prescribes a specific set of courses and/or projects necessary for earning a minor in that discipline.\n\n**Answer:** I could not find sufficient information about whether a minor must be in the same discipline as your major in the available university documents.",
+    "refused": true,
+    "refusal_decision_correct": false,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 0,
+    "faithfulness": null,
+    "planned_queries": [
+      "Does a minor need to be in the same discipline as the major?"
+    ],
+    "planned_query_count": 1,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 13
+      }
+    ],
+    "judge_details": null
+  },
+  {
+    "id": "Q40",
+    "category": "follow_up",
+    "question": "Is passing it necessary to get the degree?",
+    "session_id": "eval_gc",
+    "is_follow_up": true,
+    "out_of_scope": false,
+    "answer": "According to the provided documents, GC 101 is a non-credit Institute core course, and no grade points are associated with it. The performance in this course will not be taken into account in the calculation of the performance indices SPI/CPI (Source: academic_regulations.pdf, Page: 20, Point b). \n\nAdditionally, an NP grade in GC 101 shall not be a bar for applying for a branch change (Source: academic_regulations.pdf, Page: 34, Point d). \n\nHowever, the documents do not explicitly state whether passing GC 101 is necessary to obtain the degree. Since GC 101 is a compulsory course (Source: academic_regulations.pdf, Page: 20, Point a), it can be inferred that completing the course is required, but the specific requirement of \"passing\" is not mentioned.\n\n**Answer**: I could not find explicit information stating that passing GC 101 is necessary to obtain the degree. However, it is a compulsory course (Source: academic_regulations.pdf, Page: 20, Point a), and completion is likely required.",
+    "refused": false,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": 1.0,
+    "correctness": 0,
+    "faithfulness": 1,
+    "planned_queries": [
+      "Is passing GC 101 necessary to get the degree?"
+    ],
+    "planned_query_count": 1,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 20
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 34
+      }
+    ],
+    "judge_details": {
+      "correctness": 0,
+      "faithfulness": 1,
+      "reasons": [
+        "Correctness: The generated answer does not confirm whether passing GC 101 is necessary for the degree, while the reference answer explicitly states that a PP grade is required.",
+        "Faithfulness: The generated answer accurately reflects the retrieved context, which does not explicitly state the requirement of passing GC 101 for the degree."
+      ]
+    }
+  },
+  {
+    "id": "Q41",
+    "category": "out_of_scope",
+    "question": "Who won the FIFA World Cup in 2022?",
+    "session_id": "eval_Q41",
+    "is_follow_up": false,
+    "out_of_scope": true,
+    "answer": "I could not find sufficient information about this question in the available university documents.",
+    "refused": true,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": null,
+    "correctness": null,
+    "faithfulness": null,
+    "planned_queries": [
+      "Who won the FIFA World Cup in 2022?"
+    ],
+    "planned_query_count": 1,
+    "retrieved_sources": [],
+    "judge_details": null
+  },
+  {
+    "id": "Q42",
+    "category": "out_of_scope",
+    "question": "How do I cook chicken biryani?",
+    "session_id": "eval_Q42",
+    "is_follow_up": false,
+    "out_of_scope": true,
+    "answer": "I could not find sufficient information about this question in the available university documents.",
+    "refused": true,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": null,
+    "correctness": null,
+    "faithfulness": null,
+    "planned_queries": [
+      "What are the ingredients for chicken biryani?",
+      "What are the steps to prepare chicken biryani?",
+      "What is the cooking time for chicken biryani?",
+      "What are the tips for making perfect chicken biryani?"
+    ],
+    "planned_query_count": 4,
+    "retrieved_sources": [],
+    "judge_details": null
+  },
+  {
+    "id": "Q43",
+    "category": "out_of_scope",
+    "question": "What is the current Bitcoin price?",
+    "session_id": "eval_Q43",
+    "is_follow_up": false,
+    "out_of_scope": true,
+    "answer": "I could not find sufficient information about this question in the available university documents.",
+    "refused": true,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": null,
+    "correctness": null,
+    "faithfulness": null,
+    "planned_queries": [
+      "What is the current Bitcoin price?"
+    ],
+    "planned_query_count": 1,
+    "retrieved_sources": [],
+    "judge_details": null
+  },
+  {
+    "id": "Q44",
+    "category": "out_of_scope",
+    "question": "How do I repair a cracked phone screen?",
+    "session_id": "eval_Q44",
+    "is_follow_up": false,
+    "out_of_scope": true,
+    "answer": "I could not find sufficient information about this question in the available university documents.",
+    "refused": true,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": null,
+    "correctness": null,
+    "faithfulness": null,
+    "planned_queries": [
+      "How do I repair a cracked phone screen?"
+    ],
+    "planned_query_count": 1,
+    "retrieved_sources": [],
+    "judge_details": null
+  },
+  {
+    "id": "Q45",
+    "category": "out_of_scope",
+    "question": "What is Stanford University’s minimum attendance requirement?",
+    "session_id": "eval_Q45",
+    "is_follow_up": false,
+    "out_of_scope": true,
+    "answer": "I could not find sufficient information about Stanford University’s minimum attendance requirement in the available university documents. The provided context only discusses attendance policies for an unspecified institution, not Stanford University. (Source: academic_regulations.pdf, Pages: 19, 24)",
+    "refused": true,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": null,
+    "correctness": null,
+    "faithfulness": null,
+    "planned_queries": [
+      "What is Stanford University’s minimum attendance requirement?"
+    ],
+    "planned_query_count": 1,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 19
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 24
+      }
+    ],
+    "judge_details": null
+  },
+  {
+    "id": "Q46",
+    "category": "out_of_scope",
+    "error": "Could not capture retrieval used by generate_answer"
+  },
+  {
+    "id": "Q47",
+    "category": "out_of_scope",
+    "error": "Could not capture retrieval used by generate_answer"
+  },
+  {
+    "id": "Q48",
+    "category": "out_of_scope",
+    "question": "What will IIT Bombay’s attendance policy be in 2028–29?",
+    "session_id": "eval_Q48",
+    "is_follow_up": false,
+    "out_of_scope": true,
+    "answer": "I could not find sufficient information about IIT Bombay's attendance policy for the academic year 2028–29 in the available university documents. The provided context does not include details regarding attendance policies or future academic regulations beyond the current information. \n\n**Source:** N/A  \n**Page:** N/A",
+    "refused": true,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": null,
+    "correctness": null,
+    "faithfulness": null,
+    "planned_queries": [
+      "IIT Bombay attendance policy 2028-29"
+    ],
+    "planned_query_count": 1,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 6
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 21
+      }
+    ],
+    "judge_details": null
+  },
+  {
+    "id": "Q49",
+    "category": "out_of_scope",
+    "question": "What are the unpublished attendance exceptions for a particular IIT Bombay professor?",
+    "session_id": "eval_Q49",
+    "is_follow_up": false,
+    "out_of_scope": true,
+    "answer": "I could not find sufficient information about unpublished attendance exceptions for a particular IIT Bombay professor in the available university documents. The provided context only mentions the general attendance policy for awarding the 'DX' grade (academic_regulations.pdf, Page 29) but does not specify any unpublished exceptions for individual professors.",
+    "refused": true,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": null,
+    "correctness": null,
+    "faithfulness": null,
+    "planned_queries": [
+      "What are the unpublished attendance exceptions at IIT Bombay?",
+      "Which IIT Bombay professor is the query referring to?"
+    ],
+    "planned_query_count": 2,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 6
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 21
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 29
+      }
+    ],
+    "judge_details": null
+  },
+  {
+    "id": "Q50",
+    "category": "out_of_scope",
+    "question": "What is the private email address of the IIT Bombay academic dean?",
+    "session_id": "eval_Q50",
+    "is_follow_up": false,
+    "out_of_scope": true,
+    "answer": "I could not find sufficient information about the private email address of the IIT Bombay academic dean in the available university documents. The provided context only includes a message from the Dean of Academic Programmes without specifying any contact details (Source: academic_regulations.pdf, Page: 6).",
+    "refused": true,
+    "refusal_decision_correct": true,
+    "retrieval_recall_at_k_page_level": null,
+    "correctness": null,
+    "faithfulness": null,
+    "planned_queries": [
+      "What is the private email address of the IIT Bombay academic dean?"
+    ],
+    "planned_query_count": 1,
+    "retrieved_sources": [
+      {
+        "source": "academic_regulations.pdf",
+        "page": 6
+      },
+      {
+        "source": "academic_regulations.pdf",
+        "page": 28
+      }
+    ],
+    "judge_details": null
+  }
+]

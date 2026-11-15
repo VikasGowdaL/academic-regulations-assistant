@@ -1,5 +1,6 @@
 
 import os
+import re
 
 from dotenv import load_dotenv
 from langchain_cohere import ChatCohere
@@ -15,6 +16,25 @@ load_dotenv()
 # Maintain separate memory for each session
 session_memories = {}
 
+# Institution currently covered by the documents
+SUPPORTED_INSTITUTION = "IIT Bombay"
+
+# Known institution names that are not covered
+# by the current document collection.
+UNSUPPORTED_INSTITUTIONS = [
+    "PES University",
+    "IIT Delhi",
+    "IIT Madras",
+    "IIT Kanpur",
+    "IIT Kharagpur",
+    "IIT Roorkee",
+    "IIT Guwahati",
+    "IIT Hyderabad",
+    "IISc Bangalore",
+    "NIT Karnataka",
+    "BITS Pilani"
+]
+
 
 def get_session_memory(session_id):
 
@@ -24,6 +44,28 @@ def get_session_memory(session_id):
         )
 
     return session_memories[session_id]
+
+
+def is_unsupported_institution(question):
+    """
+    Check whether the question explicitly mentions
+    a known institution not covered by the documents.
+    """
+
+    question_lower = question.lower()
+
+    for institution in UNSUPPORTED_INSTITUTIONS:
+
+        pattern = (
+            r"(?<!\w)"
+            + re.escape(institution.lower())
+            + r"(?!\w)"
+        )
+
+        if re.search(pattern, question_lower):
+            return True
+
+    return False
 
 
 def generate_answer(
@@ -36,8 +78,29 @@ def generate_answer(
     memory = get_session_memory(session_id)
 
     print("\n========== PROCESSING QUESTION ==========")
+    print("Question:", question)
 
-    # Step 1: Retrieve previous conversation context
+    # Step 1: Validate the requested institution
+    if is_unsupported_institution(question):
+
+        answer = (
+            "I could not find sufficient information "
+            "about this institution in the available "
+            "university documents. "
+            f"The current documents cover {SUPPORTED_INSTITUTION}."
+        )
+
+        print("\nRESULT: UNSUPPORTED INSTITUTION")
+
+        memory.add_message("user", question)
+        memory.add_message("assistant", answer)
+
+        return {
+            "answer": answer,
+            "sources": []
+        }
+
+    # Step 2: Retrieve previous conversation context
     conversation_context = memory.get_context()
 
     contextual_question = f"""
@@ -48,14 +111,14 @@ def generate_answer(
     {question}
     """
 
-    # Step 2: Retrieve relevant documents
+    # Step 3: Retrieve relevant documents
     documents = retrieve_for_multiple_queries(
         contextual_question,
         store_type=store_type,
         k=k
     )
 
-    # Step 3: Refuse if no relevant documents
+    # Step 4: Refuse if no relevant documents
     if not documents:
 
         answer = (
@@ -72,7 +135,7 @@ def generate_answer(
             "sources": []
         }
 
-    # Step 4: Prepare document context
+    # Step 5: Prepare document context
     context_parts = []
     sources = []
 
@@ -94,7 +157,7 @@ def generate_answer(
 
     context = "\n\n".join(context_parts)
 
-    # Step 5: Prepare prompt
+    # Step 6: Prepare prompt
     prompt = SYSTEM_PROMPT.format(
         context=context,
         question=question
@@ -110,9 +173,16 @@ def generate_answer(
 
     Use only retrieved university documents
     for factual answers.
+
+    IMPORTANT:
+    Do not attribute regulations from one
+    university to another university.
+
+    If the question has multiple parts,
+    answer each supported part separately.
     """
 
-    # Step 6: Generate answer
+    # Step 7: Generate answer
     llm = ChatCohere(
         model="command-a-03-2025",
         temperature=0,
@@ -122,11 +192,11 @@ def generate_answer(
     response = llm.invoke(prompt)
     answer = response.content
 
-    # Step 7: Store messages in this session only
+    # Step 8: Store messages in this session only
     memory.add_message("user", question)
     memory.add_message("assistant", answer)
 
-    # Step 8: Remove duplicate sources
+    # Step 9: Remove duplicate sources
     unique_sources = []
     seen_sources = set()
 

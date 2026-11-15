@@ -66,7 +66,7 @@ function App() {
 
         <div>
           <h2>Academic Regulations Assistant</h2>
-          <p>PES University regulations companion</p>
+          <p>IIT Bombay regulations companion</p>
         </div>
       </header>
 

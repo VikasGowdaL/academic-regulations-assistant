@@ -1,0 +1,55 @@
+{
+  "total": 50,
+  "completed": 50,
+  "errors": 0,
+  "vector_store": "faiss",
+  "k_per_planned_query": 2,
+  "page_level_recall_mean_in_scope": 0.8125,
+  "correctness_mean_in_scope_refusals_zero": 0.675,
+  "faithfulness_mean_answered_in_scope": 0.9655,
+  "out_of_scope_refusal_accuracy": 0.9,
+  "overall_refusal_decision_accuracy": 0.76,
+  "multi_part_with_two_or_more_planned_queries": 8,
+  "multi_part_completed": 8,
+  "follow_up_correctness": 0.8571,
+  "by_category": {
+    "core_rules": {
+      "total": 15,
+      "completed": 15,
+      "correctness": 0.6667,
+      "page_recall": 0.8
+    },
+    "calendar_curriculum": {
+      "total": 10,
+      "completed": 10,
+      "correctness": 0.6,
+      "page_recall": 0.8
+    },
+    "multi_part": {
+      "total": 8,
+      "completed": 8,
+      "correctness": 0.625,
+      "page_recall": 0.6875
+    },
+    "follow_up": {
+      "total": 7,
+      "completed": 7,
+      "correctness": 0.8571,
+      "page_recall": 1.0
+    },
+    "out_of_scope": {
+      "total": 10,
+      "completed": 10,
+      "correctness": null,
+      "page_recall": null
+    }
+  },
+  "limitations": [
+    "Recall is source-page recall, not chunk-level recall.",
+    "k is applied to each planned sub-query, not a global top-k.",
+    "Follow-up sessions exercise memory but do not isolate its causal benefit; use a memory-off ablation for that claim.",
+    "The 1.0 retrieval threshold is experimental and may need calibration separately for Chroma.",
+    "LLM judge scores are not ground truth; manually audit a sample.",
+    "Incomplete runs should not be reported as full evaluation."
+  ]
+}

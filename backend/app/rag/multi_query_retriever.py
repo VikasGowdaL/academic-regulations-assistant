@@ -5,7 +5,7 @@ from app.rag.retriever import retrieve_documents
 
 # Experimental threshold.
 # Lower FAISS L2 distance generally indicates greater similarity.
-DISTANCE_THRESHOLD = 1.0
+DISTANCE_THRESHOLD = 1.2
 
 
 def retrieve_for_multiple_queries(
@@ -71,11 +71,11 @@ def retrieve_for_multiple_queries(
 if __name__ == "__main__":
 
     questions = [
-        "What are the attendance requirements?",
-        "What is the academic calendar for 2026-27?",
-        "Who won the FIFA World Cup?",
-        "How do I cook biryani?"
-    ]
+    "Who approves registration, and can the maximum permitted credit load be exceeded?",
+    "What is the DX attendance threshold, and what is the maximum credit load for Category I?",
+    "What is the difference between FR and DX, and how does DX affect CPI?",
+    "What is PES University's DX attendance policy?"
+]
 
     for question in questions:
 
